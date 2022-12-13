@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+
+    <!-- axios link -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"
+      integrity="sha512-0qU9M9jfqPw6FKkPafM3gy2CBAvUWnYVOfNPDYKVuRTel1PrciTj+a9P3loJB+j0QmN2Y0JYQmkBBS8W+mbezg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+      defer></script>
+
+    <!-- login css -->
+    <link rel="stylesheet" href="/css/login.css" />
+
+    <!-- login js -->
+    <script src="/js/login.js" defer></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet" />
+  </head>
+  <body>
+    <div class="main">
+      <h1>Login</h1>
+      <form method="POST">
+        <input
+          type="email"
+          placeholder="Email"
+          name="email"
+          class="email"
+          required />
+        <input
+          type="password"
+          placeholder=" Password"
+          class="password"
+          name="password"
+          required />
+        <button role="submit" class="login-btn">Login</button>
+      </form>
+
+      <div class="loginbox">
+        Not a member? <a href="/register"> Register Now </a>
+      </div>
+    </div>
+  </body>
+</html>

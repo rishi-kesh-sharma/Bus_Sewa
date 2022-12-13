@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reserve form</title>
+    <link rel="stylesheet" href="/css/bookingForm.css">
+    <script src="/js/bookingForm.js" defer></script>
+  </head>
+  <body>
+    <div>
+      <h2>Booking Form</h2>
+      <form method="POST" action="/api/booking/">
+
+        <input type="hidden"  name="bookingFor" required value=<%= busId %>  />
+
+        <label for="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Your name.."
+          value=<%= user.name %>
+          required
+        />
+        
+        <label for="email">Enter your email:</label>
+        <input type="email" id="email" name="email" required value=<%= user.email %>  />
+
+        <label for="from">From</label>
+        <select id="from" name="from" required>
+          <option value="kathmandu">kathmandu</option>
+          <option value="Pokhara">Pokhara</option>
+          <option value="Bhairahawa">Bhairahawa</option>
+          <option value="lamjung">lamjung</option>
+        </select>
+        <label for="to">To</label>
+        <select id="to" name="to" required>
+          <option value="kathmandu">kathmandu</option>
+          <option value="Pokhara">Pokhara</option>
+          <option value="Bhairahawa">Bhairahawa</option>
+          <option value="lamjung">lamjung</option>
+        </select>
+        <br />
+
+        <label for="phone">Enter a phone number:</label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="+977-XXXXXXXXXX"
+          required
+          value=<%= user.phone %>
+        />
+
+        <label for="bookingDate">Date of Booking:</label>
+        <input type="date" name="bookingDate" required />
+
+        <label for="message">Message</label>
+        <input type="text" name="message" required />
+
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+</html>

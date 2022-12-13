@@ -1,0 +1,19 @@
+<div class="container-fluid px-4">
+    <div class="row g-3 my-2">
+       
+      <% overview.forEach((item,index)=>{ %>
+        <div class="col-md-3">
+          <div
+            class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded"
+          >
+            <div>
+              <p class="fs-5">  <%= item.name %> </p>
+              <h3 class="fs-2"> <%= item.value %></h3>
+            </div>
+          </div>
+        </div>
+    <%  }) %>
+
+    </div>
+  </div>
+  

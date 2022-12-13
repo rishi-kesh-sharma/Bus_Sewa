@@ -1,0 +1,40 @@
+
+  
+  
+  <div class="row my-5">
+    <div class="col">
+      <table class="table bg-white rounded shadow-sm table-hover">
+        <thead>
+          <tr>
+            <th scope="col" width="50">S.N.</th>
+            <th scope="col" width="50">Name</th>
+            <th scope="col">Bus No</th>
+            <th scope="col">Capacity</th>
+            <th scope="col">Status</th>
+            <th scope="col">Description</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Remove</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <% buses.forEach((bus,index)=>{  %>
+            
+            <tr>
+              <td><%= index+1 %></td>
+              <td contenteditable="true" class="bus-data"><%=bus.name %></td>
+              <td contenteditable="true" class="bus-data"><%=bus.busNo %> </td>
+              <td contenteditable="true" class="bus-data"> <%=bus.capacity %> </td>
+              <td contenteditable="true" class="bus-data"> <%=bus.status %> </td>
+              <td contenteditable="true" class="bus-data"> <%=bus.description %> </td>
+              <td><i class="fa-solid fa-pen-to-square edit-btn" id=<%=bus._id%> >edit</i></td>
+             
+              <td><i class="fa fa-trash remove-btn" aria-hidden="true" id=<%=bus._id%> ></i></td>
+            </tr>
+
+          <% }) %>
+
+        </tbody>
+      </table> 
+    </div>
+  </div>

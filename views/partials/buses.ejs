@@ -1,0 +1,54 @@
+<!-- buses section suru bhayo  -->
+<h1 class="heading">
+  <span>Buses</span>
+</h1>
+
+<section class="buses"  id="buses">
+    <% buses.forEach((bus,index)=>{ %>
+    
+
+    
+        <div class="bus-card">
+          <div class="images">
+            <img src=<%= `/assets/images/bus${index % 3 }.jpg` %> alt="">
+          </div>
+          <h2><%= bus.name %></h2>
+          <h2><%= bus.busNo %></h2>
+          <h2><%= bus.capacity %></h2>
+          <p>
+            <%= bus.description %>
+          </p>
+
+
+          <% if(authenticated){ %>
+
+                <% if(user.role.includes("client")){ %>
+
+                    <% if(bus.status=="available"){ %>
+
+                      <a href="/book/<%= bus._id %>" class="reserve">Reserve</a>
+
+              
+                    <% }else{ %>
+
+                        <a><%= bus.status %></a>   
+
+                    <% } %>  
+
+                <% } %>
+                
+          <% }else{ %>
+            
+            <a href="/login" class="reserve">Reserve</a>
+            
+            <% } %>
+
+        
+
+        </div>
+    <% }) %>
+
+  </section>
+  
+  <!-- buses section sakiyo  -->
+  

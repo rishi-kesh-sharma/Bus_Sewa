@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/bookingDetails.css" />
+    <title>Booking info</title>
+  </head>
+  <body>
+        <% bookings.forEach((booking)=>{ %>
+          
+            <div class="wrapper">
+                <div class="right">
+                    <div class="info">
+                    
+                        <h3>Booking Details</h3>
+                    
+                        <div class="info_data">
+                            <div class="data">
+                                <h4>name</h4>
+                                <p><% booking.name %></p>
+                            </div>
+            
+                            <div class="data">
+                                <h4>email</h4>
+                                <p><% booking.email %></p>
+                            </div>
+            
+                            <div class="data">
+                                <h4>phone</h4>
+                                <p><% booking.phone %></p>
+                            </div>
+            
+                            <div class="data">
+                                <h4>Booking Created Date</h4>
+                                <p><% booking.createdAt %></p>
+                            </div>
+            
+                            <div class="data">
+                                <h4>Booked Bus</h4>
+                                <p><% booking.bookingFor.name %></p>
+                            </div>
+            
+                            <div class="data">
+                                <h4>Booked Bus No.</h4>
+                                <p><% booking.bookingFor.busNo %></p>
+                            </div>
+            
+                            <div class="data">
+                                <h4>Booked Date</h4>
+                                <p><% booking.bookingDate %></p>
+                            </div>
+            
+                            <div class="data">
+                                <h4>Source</h4>
+                                <p><% booking.bookingFor.from %></p>
+                            </div>
+            
+                            <div class="data">
+                                <h4>Destination</h4>
+                                <p><% booking.bookingFor.to %></p>
+                            </div>
+            
+                            <div class="data">
+                                <h4>Status</h4>
+                                <p><% booking.status %></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             </div>   
+          
+        <% }) %>
+    </body>
+</html>
+
+
+
+

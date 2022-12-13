@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Bus Sewa
+    </title>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
+    <!-- font awesome cdn link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <!-- home css -->
+    <link rel="stylesheet" href="/css/home.css" />
+
+    <script src="/js/home.js" defer></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  </head>
+  <body>
+    <header>
+      <div id="menu-bar" class="fas fa-bars"></div>
+
+      <a href="#" class="logo"><span>S</span>A<span>P</span> </a>
+
+      <nav class="navbar">
+        <a href="#home">home</a>
+        <!-- <a href="#about">about</a> -->
+        <a href="#services">services</a>
+        <a href="#buses">Buses</a>
+        
+        <!-- not to show this for admin -->
+        
+        
+        <!-- conditional rendering for profile and login -->
+        <% if(authenticated) {%>
+          
+          
+                  <% if(user.role.includes("client")){ %>
+                    
+                    <a href="#contact">contact</a>
+                    <a href="/profile">profile</a>
+                          
+                        <% }else if(user.role.includes("admin")){ %>
+
+                        <a href="/dashboard">dashboard</a>
+                            
+                        <% } %>
+
+             <a href="/api/auth/logout">logout</a>
+                
+        <% }else{ %>
+
+          <a href="#contact">contact</a>
+          
+        <a href="/login">login</a>
+        
+        <% } %>
+      </nav>
+    </header>
+
+      <!-- header section suro bhayo  -->
+
+      <section class="home" id="home">
+        <div class="content">
+          <h3>We can take you anywhere you want.</h3>
+          <p>Make your journey careful.</p>
+          <p>Travel with us.</p>
+          <a href="#buses" class="btn">Let's Go</a>
+        </div>
+
+        <div class="video-container">
+          <video
+            src="./assets/video/home-background.mp4"
+            id="video-slider"
+            loop
+            autoplay
+            muted
+          ></video>
+        </div>
+      </section>
+
+
+      <!-- partial for buses -->
+      <%- include("../partials/buses") %> 
+
+      <!-- partial for services -->
+      <%- include("../partials/services") %> 
+      
+
+     <% if(authenticated){ %>
+
+      <%   if(  user.role.includes("client")){ %>
+
+        <!-- partial for contact -->
+         <%- include("../partials/contact") %> 
+
+          <!-- partial for footer -->
+            <%- include("../partials/footer") %> 
+          
+  <% } %>
+
+
+      <% }else{ %>
+
+            <!-- partial for contact -->
+           <%- include("../partials/contact") %> 
+
+           <!-- partial for footer -->
+           <%- include("../partials/footer") %> 
+
+        <% } %>
+
+
+      <!-- partial for buses -->
+
+   
+      
+
+
+   
+      </body>
+    </html>
+  </body>
+</html>

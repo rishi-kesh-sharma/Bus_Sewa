@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <!-- axios cdn -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js" integrity="sha512-0qU9M9jfqPw6FKkPafM3gy2CBAvUWnYVOfNPDYKVuRTel1PrciTj+a9P3loJB+j0QmN2Y0JYQmkBBS8W+mbezg==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+
+    <!-- dashboard css -->
+    <link rel="stylesheet" href="/css/dashboard.css" />
+
+    <!-- dashboard js -->
+    <script src="/js/dashboard/<%= id %>.js" defer></script>
+    <title>Admin Dashboard</title>
+  </head>
+
+  <body>
+    <div class="d-flex" id="wrapper">
+      <!-- Sidebar -->
+      <div class="bg-white" id="sidebar-wrapper">
+        <div
+          class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"
+        >
+          <i class="fas fa-bus me-2"></i>SAP
+        </div>
+        <div class="list-group list-group-flush my-3">
+         
+          <a
+            href="/dashboard"
+            class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
+            ><i class="me-2"></i>Overview</a
+          >
+          <a
+            href="/dashboard/buses"
+            class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
+            ><i class="me-2"></i>Buses</a
+          >
+          <a
+            href="/dashboard/users"
+            class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
+            ><i class="me-2"></i>Users</a
+          >
+          <a
+            href="/dashboard/bookings"
+            class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
+            ><i class="me-2"></i>Bookings</a
+          >
+          <a
+            href="/dashboard/bookings/pending"
+            class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
+            ><i class="me-2"></i>Pending Bookings</a
+          >
+          <a
+            href="/dashboard/bookings/accepted"
+            class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
+            ><i class="me-2"></i>Accepted Bookings</a
+          >
+          <a
+            href="/dashboard/bookings/rejected"
+            class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
+            ><i class="me-2"></i>Rejected Bookings</a
+          >
+          <a
+            href="/dashboard/bus/register"
+            class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
+            ><i class="me-2"></i>Register Bus</a
+          >
+        </div>
+      </div>
+      <!-- /#sidebar-wrapper -->
+
+      <!-- Page Content -->
+      <div id="page-content-wrapper">
+        <nav
+          class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4"
+        >
+          <div class="d-flex align-items-center">
+            <h2 class="fs-2 m-0">Dashboard</h2>
+          </div>
+          <div class="d-flex align-items-center">
+            <a href="/" class="fs-2 mx-5">Back To Home</a>
+          </div>
+          <div class="d-flex align-items-center">
+            <a href="/api/auth/logout" class="fs-2 mx-5">Logout</a>
+          </div>
+
+       
+        </nav> 
+
+
+        <!-- include partials -->
+
+            <!-- include overview partials -->
+
+            <!--  -->
+
+            <%- include( `../partials/dashboard/${id}.ejs` ) %>
+              
+          
+
+        
+
+        </div>
+      </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      var el = document.getElementById("wrapper");
+      var toggleButton = document.getElementById("menu-toggle");
+
+      toggleButton.onclick = function () {
+        el.classList.toggle("toggled");
+      };
+    </script>
+  </body>
+</html>
